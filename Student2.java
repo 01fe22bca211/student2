@@ -1,31 +1,34 @@
-import java.util.HashMap;
-import java.util.Map;
 
 public class Student2 {
-    private int semesterNumber;
-    private Map<String, Integer> courseMarks;
 
-    public Student2 (int semesterNumber) {
-        this.semesterNumber = semesterNumber;
-        this.courseMarks = new HashMap<>();
+    String name="Vaishali";
+    int age=19;
+    String month;
+    int date;
+    int year;
+
+    public Student2(int date, String month, int year) {
+        this.date=date;
+        this.month=month;
+        this.year=year;
     }
 
-    public void addCourseMark(String courseName, int marks) {
-        courseMarks.put(courseName, marks);
+    public void display(){
+        System.out.println("Name:"+name);
+        System.out.println("Age:"+age);
     }
 
-    public void displayCoursesAndMarks() {
-        System.out.println("Semester " + semesterNumber + " Courses and Marks:");
-        for (Map.Entry<String, Integer> entry : courseMarks.entrySet()) {
-            System.out.println("Course: " + entry.getKey() + ", Marks: " + entry.getValue());
-        }
+    public void read(){
+        System.out.print("Date of birth of the Student is ");
+        System.out.print(date +"/" + month+"/"+year);
     }
 
-    public static void main(String[] args) {
-        // Example usage
-        Student2 semester1 = new Student2 (1);
-        semester1.addCourseMark("Mathematics", 90);
-        semester1.addCourseMark("Physics", 85);
- 
+    public static void main(String[] args){
+        Student2 s = new Student2(16, "August", 2004);
+        s.display();
+        s.read();
     }
 }
+
+
+
